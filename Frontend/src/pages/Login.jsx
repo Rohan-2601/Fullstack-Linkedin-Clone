@@ -29,7 +29,7 @@ function Login() {
         password
       }, { withCredentials: true });
       console.log("Signin successful:", result.data);
-        setUserData(result.data); // assuming the response has a `user` field
+        setUserData(result.data.user); // assuming the response has a `user` field
         
         navigate("/");
       setLoading(false);

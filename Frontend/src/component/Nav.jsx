@@ -20,7 +20,7 @@ let [searchData,setSearchData]=useState([])
 const searchBoxRef = useRef(null);
 const handleSignOut=async ()=>{
     try {
-        let result =await axios.get(serverUrl+"/api/auth/logout",{withCredentials:true})
+        let result =await axios.post(serverUrl+"/api/auth/logout",{withCredentials:true})
         setUserData(null)
         navigate("/login")
         console.log(result);
@@ -69,7 +69,7 @@ useEffect(() => {
         setActiveSearch(false)
         navigate("/")
       }}>
-        <img src={logo2}alt="" className='w-[50px]'/>
+        <img src={logo2}alt="" className='w-[50px] cursor-pointer'/>
       </div>
       {!activeSearch && <div><IoSearchSharp className='w-[23px] h-[23px] text-gray-600 lg:hidden' onClick={()=>setActiveSearch(true)}/></div>}
 
